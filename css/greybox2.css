@@ -1,0 +1,91 @@
+/* customizable settings */
+
+/* settings for window where page loads */
+#GB_window {
+  background: #fff;
+  border: 5px solid #000;
+}
+
+/* settings for caption */
+#GB_caption {
+	font: 12px bold helvetica, verdana, sans-serif;
+	color: #fff;
+	background: #000 url(../images/close2.gif) no-repeat right center;
+	padding: 2px 0 2px 5px;
+}
+
+/*overlay for all but Mac FF*/
+.GB_overlayBG {
+  background-color:#000;
+	filter:alpha(opacity=60);
+	opacity: 0.60;
+}
+/*overlay for Mac FF to deal with Flash in iFrame problem*/
+.GB_overlayMacFFBGHack {
+  background-image: url(../images/macFFBgHack.png);
+}
+
+/* "loading" image */
+#GB_loading {
+	background: white url(../images/loading.gif) no-repeat 50% 50%; 
+}
+/*end of custom settings*/
+
+
+
+/*GREYBOX settings*/
+#GB_overlay {
+  position: absolute;
+  margin: auto;
+  top: 0;
+  left: 0;
+  z-index: 250;
+  width:  100%;
+  height: 100%;
+}
+
+/* for IE 6 overlay */
+* html body, * html {
+	height: 100%;
+  width: 100%;
+}
+
+
+
+#GB_window {
+  top: 10px;
+  left: 0px;
+  position: fixed;
+  overflow: hidden;
+  z-index: 300;
+}
+
+
+/* IE-6 overrule fixed */
+* html #GB_window {
+  position: absolute;
+}
+
+
+
+
+#GB_frame {
+  border: 0;
+  overflow: auto;
+  width: 100%;
+}
+
+#GB_caption {
+	margin: 0;
+	text-align: left;
+	position: relative;
+	z-index: 201;
+	cursor: pointer;
+}
+
+#GB_loading {
+  position:absolute;
+	width: 100%;
+	height: 100%;
+}
+

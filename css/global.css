@@ -1,0 +1,464 @@
+/* *** Reset browser styles *** */
+
+
+
+h1, h2, h3, h4, h5, h6, p, div, ul, ol, li, code, pre, form, fieldset, blockquote, html, body {
+	margin: 0;
+	padding: 0;
+	font-size: 100%;
+	font-weight: normal;
+  -moz-opacity: .999;
+}
+
+table {
+	border-collapse: collapse; /* prevents double borders */
+	border-spacing: 0;
+}
+
+td, th, caption {
+	font-weight: normal;
+	text-align: left;
+}
+
+img, fieldset  { 
+	border: 0; /* remove border around linked images and fieldsets */
+}
+
+ol  {
+	margin-left: 1.8em; /* add smaller indent than default */
+	list-style: decimal;
+}
+
+ul {
+	margin-left: 1.5em;
+	list-style:square;
+}
+
+q:before, q:after { 
+	content:''; /* remove browser generated quote marks */
+}
+
+/* 3 col layout */
+
+#threeCol #contentWrap {
+	width: 585px;
+}
+
+#threeCol #news {
+	float: right;
+	width: 175px;
+	padding-top:1em;
+}
+
+#threeCol #main {
+	width: 410px;
+	margin-right: 10px;
+}
+
+/* 2 col layout */
+
+#twoCol #contentWrap {
+	width: 760px;
+}
+
+#twoCol #main {
+	width: 580px;
+	margin-right: 10px;
+}
+
+
+/* common layout */
+
+#contentWrap {
+	float:left;
+}
+
+#contentWrap #main {
+	float: right;
+	padding-bottom: 25px;
+}
+
+#threeCol #sidebar, #twoCol #sidebar {
+	float: left;
+	width: 150px;
+	padding-top: 1em;
+	background: url(../images/burning_book.jpg) no-repeat 70% 100%;
+	padding-bottom: 350px;
+}
+
+#container {
+	width: 760px;
+	margin: 0 auto;
+	border-right: 1px solid #A7A37E;
+	border-left: 1px solid #A7A37E;
+	background-color: #FFFFFF;
+	position: relative;
+}
+
+#footer {
+	clear: both;
+}
+
+
+
+/* page styles */
+body {
+	font: 62.5% "Trebuchet MS", Arial, sans-serif;
+	background: url(../images/bg.png) repeat-x;
+}
+
+
+#news h2, #main h1 {
+	font-size: 3em;
+	color: #002F2F;
+	text-transform: uppercase;
+	line-height: 0.9em;
+	border-top: 1px solid #A7A37E;
+	padding-top: 3px;
+	padding-bottom: 2px;
+	border-bottom: 1px solid #A7A37E;
+	margin-bottom: 10px;
+}
+
+#news h2 {
+font-size: 3em;
+	color: #002F2F;
+
+}
+
+#news h3 {
+	font-size: 1.6em;
+	color: #046380;
+}
+
+#news p {
+	font-size: 1.2em;
+	margin-bottom: 10px;
+}
+#main h1 {
+	font-family: Georgia, "Times New Roman", Times, serif;
+	text-transform: none;
+	color: #990000;
+	padding-top: 1em;
+	font-weight: normal;
+	margin-bottom: 20px;
+}
+
+#main h2 {
+	color: #053131;
+	font-size: 1.6em;
+	font-weight: bold;
+	margin-bottom: 5px;
+	border-bottom: 1px solid #CCC;
+	margin-top: 10px;
+}
+#main {
+	padding-top: 1em;
+	background-color: white;
+}
+#main p {
+	font: 1.8em Georgia, "Times New Roman", Times, serif;
+	margin-bottom: 1em;
+}
+
+#sidebar h2 {
+	font-size: 1.5em;
+	font-weight: bold;
+	color: #FFFFFF;
+	background: #333333;
+	padding: 3px 5px;
+}
+
+
+#sidebar  ul {
+	margin: 0px;
+	padding: 0px;
+	list-style: none;
+	border-bottom: 1px solid #A7A37E;
+	border-right: 1px solid #A7A37E;
+}
+#sidebar li {
+	font-weight: bold;
+	font-size: 1.3em;
+	text-transform: lowercase;
+	background: #F2F2F2;
+	text-align: right;
+}
+#sidebar ul ul {
+	border: none;
+}
+#sidebar li li {
+	font-size: .9em;
+	font-weight: normal;
+	background: #FFFFFF;
+}
+#sidebar a {
+	text-decoration: none;
+	color: #002F2F;
+	padding: 4px 3px 2px 2px;
+	display: block;
+}
+#sidebar li a {
+	border-top: 1px solid #A7A37E;
+}
+#sidebar li li a {
+	border-top: 1px dashed #EFECCA;
+	color: #046380;
+	padding-bottom: 4px;
+}
+#footer {
+	border-top: 1px solid #A7A37E;
+	font: normal 1.5em/1em Georgia, "Times New Roman", Times, serif;
+	color: #046380;
+	margin-top: 10px;
+	margin-left: 170px;
+	background: #E6E2AF;
+	border-left: 1px solid #A7A37E;
+	text-align: right;
+	padding: 7px 10px 6px 0;
+}
+
+#banner {
+	background: #E6E2AF;
+	position: relative;
+}
+
+#banner span#badge a {
+	display: block;
+	text-decoration: none;
+	background-image: url(../images/postit.png);
+	background-repeat: no-repeat;
+	height: 78px;
+	width: 84px;
+	position: absolute;
+	top: 14px;
+	left: 727px;
+}
+
+#banner  span#badge a:hover {
+	background-position: 0 -82px;
+}
+
+#sidebar a:hover {
+	background: #F3F4C7;
+}
+
+#results {
+	position: absolute;
+	top: 425px;
+	left: 435px;
+	width: 295px;
+	padding: 15px;
+	font-size: 1em;
+	border-left: 1px solid #3D6161;
+	background: url(../images/bg.png) 0px -275px;
+}	
+
+#results code {
+	color: #CCCCCC;
+	display: block;
+	white-space: pre;
+	font-size: 1.2em;
+} 
+
+#results code strong {
+	font-weight: bold;
+	color: #990000;
+}
+
+#results h2 {
+	color: #FFFFFF;
+	font-size: 2em;
+}
+
+#results div {
+	margin-bottom: 10px;
+	font-size: 1.5em;
+}
+
+#results div span.explanation {
+	font-size: .9em;
+	color: #FFFFFF;
+}
+
+.example a {
+	text-decoration: none;
+	color: #FFFFFF;
+	background: #043232;
+	font: 0.7em "Trebuchet MS";
+	text-align: center;
+	padding: 3px 5px 2px;
+}
+code {
+	font-family: "Courier New", Courier, monospace;
+}
+.example a:hover {
+	color: #0D3A3A;
+	background: #E6E2AF;
+}
+
+
+/* ie 6  */
+/*give links full rollover and remove space*/
+* html #sidebar li a { height: 1px; }
+
+/*allow alpha trans of bg image*/
+* html #banner span#badge a {
+background-image: url(../images/IEpostit.png);
+background-position: 0 0;
+height: 61px;
+}
+
+* html #banner span#badge a:hover {
+background-position: 0 -61px;
+}
+
+* html #banner span#badge a {
+	left: 750px;
+}
+form .label {
+	display: block;
+	margin-top: 10px;
+	text-transform: uppercase;
+	font: bold 0.8em "Trebuchet MS", Arial, Helvetica, sans-serif;
+	color: #A00;
+}
+input.wide {
+	width: 90%;
+}
+#main .section {
+	padding: 10px;
+	margin-top: 20px;
+	border: 1px solid #666;
+	margin-bottom: 20px;
+}
+#resultSection {
+	background: #ECEFEF;
+	margin-bottom: 20px;
+}
+#testSection {
+	background: #ECEFEF;
+	margin-bottom: 20px;
+}
+textarea.wide {
+	width: 90%;
+}
+
+.badge {
+	position: absolute;
+	z-index:50;
+	font-size:14px;
+	font-weight:bold;
+	padding: 5px;
+	color: black !important;
+	background-color: #3FF;
+	border: 1px black solid;
+	opacity: 0.5;
+	filter: alpha(opacity=50);
+}
+
+.highlighted {
+	position: absolute;
+	background-color: transparent;
+	opacity: 0.5;
+	filter: alpha(opacity=50);
+	border:1px solid white;
+	z-index: 100;
+}
+
+#bib {
+	padding: 10px;
+  border: 1px solid #06C;
+}
+
+#main li {
+	font-size: 1.4em;
+	padding-bottom: 5px;
+}
+
+#main .sideBySide li {
+	float: left;
+	width: 135px;
+	overflow: hidden;
+}
+
+.clear:after { 
+content: "."; display: block; height: 0; clear: both; visibility: hidden; 
+}
+
+.clear {
+	min-height: 1px;
+}
+
+* html .clear {
+ height: 1px;
+}
+
+.clickable {
+	cursor:pointer;
+	margin-bottom: 5px;
+}
+
+.clickable:hover {
+background-color:#FFC;
+}
+
+.badgeClass {
+	top: 20px;
+	background-color:#F90;
+}
+
+#overlay {
+background-color: red;
+opacity: 100;
+display: none;
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+z-index: 200;
+cursor: pointer;
+cursor: hand;
+}
+small {
+	font-size: 75%;
+}
+h1 a {
+	font-size: 16px;
+	margin-left: 25px;
+}
+#main li li {
+	font-size: 100%;
+}
+#footnote {
+	margin-left: 170px;
+	clear: both;
+}
+#main li p {
+	font-size: 1.3em;
+}
+#news h3.date, #main h3.date {
+	font-size: 1.2em;
+	text-transform: uppercase;
+	color: #FFF;
+	background: #666;
+	padding: 2px 5px 1px;
+	margin-bottom: 5px;
+}
+#main h3 {
+	font-size: 2em;
+}
+#content #login label {
+	text-align: right;
+	clear: left;
+	float: left;
+	width: 150px;
+	margin-right: 15px;
+}
+#login #button {
+	margin-left: 165px;
+}
+#content #login {
+	margin-top: 15px;
+}
