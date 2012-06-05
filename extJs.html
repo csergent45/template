@@ -1,0 +1,141 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html> 
+   
+  <head> 
+    <title> 
+      ExtJS Layout Example 
+    </title> 
+    <!--<link rel="stylesheet" type="text/css" href="http://serverapi.arcgisonline.com/jsapi/arcgis/2.5/js/dojo/dijit/themes/claro/claro.css"/> 
+    <link rel="stylesheet" type="text/css" href="http://extjs.cachefly.net/ext-3.2.1/resources/css/ext-all.css" />--> 
+    <link rel="stylesheet" type="text/css" href="http://cdn.sencha.io/ext-4.0.7-gpl/resources/css/ext-all.css"/> 
+    <link rel="stylesheet" type="text/css" href="http://serverapi.arcgisonline.com/jsapi/arcgis/2.8/js/esri/dijit/css/Popup.css"/> 
+    <style type="text/css"> 
+      html, body { 
+        font:normal 12px verdana;  
+        margin:0; 
+        padding:0;  
+        border:0 none; 
+        overflow:hidden;  
+        height:100%; 
+      }  
+ 
+    </style> 
+    <script src="http://serverapi.arcgisonline.com/jsapi/arcgis/?v=2.8compact" 
+    type="text/javascript"></script> 
+                 
+    <script type="text/javascript" charset="utf-8" src="http://cdn.sencha.io/ext-4.0.7-gpl/ext-all.js"></script>       
+    </script> 
+    <script type="text/javascript">
+        dojo.require("esri.map");
+        dojo.require("esri.layers.FeatureLayer");
+        dojo.require("esri.dijit.Popup");
+        dojo.require("dojo.number");
+
+
+        var map;
+
+        function init() {
+
+            var viewport = new Ext.Viewport({
+                layout: "fit",
+                title: "EXT JS Layout",
+                items: [{
+                    layout: "border",
+                    items: [{
+                        region: "center",
+                        title: "center",
+                        html: "<div id='map' style='height:100%; width:100%;z-index=: 1000;'></div>"
+                    }, {
+                        region: "north",
+                        height: 50,
+                        collapsible: false,
+                        contentEl: "header"
+                    }, {
+                        region: "south",
+                        height: 80,
+                        collapsible: false,
+                        contentEl: "footer" // this gets the content from the div named "footer" 
+                    }, {
+                        region: "west",
+                        title: "Left Panel",
+                        width: 150,
+                        split: true,
+                        collapsible: true,
+                        html: "Left panel content. This panel is collapsible and can be resized using the splitter",
+                        listeners: {
+                            collapse: function () { if (map) { map.resize(); } }
+                        }
+                    }, {
+                        region: "east",
+                        width: 200,
+                        xtype: 'tabpanel',
+                        activeTab: 0, // index or id 
+                        items: [{
+                            title: 'Tab 1',
+                            html: 'This is tab 1 content.'
+                        }, {
+                            title: 'Tab 2',
+                            html: 'This is tab 2 content.'
+                        }, {
+                            title: 'Tab 3',
+                            html: 'This is tab 3 content.'
+                        }]
+                    }]
+                }]
+            });
+            var initialExtent = new esri.geometry.Extent({ "xmin": -118.61, "ymin": 34.34, "xmax": -118.09, "ymax": 34.56, "spatialReference": { "wkid": 4326} });
+
+            var popup = new esri.dijit.Popup(null, dojo.create("div"));
+
+            map = new esri.Map("map", {
+                extent: esri.geometry.geographicToWebMercator(initialExtent),
+                infoWindow: popup
+            });
+
+            dojo.connect(map, 'onLoad', function (theMap) {
+                dojo.connect(window, 'resize', map, map.resize);
+            });
+
+            var basemap = new esri.layers.ArcGISTiledMapServiceLayer("http://server.arcgisonline.com/ArcGIS/rest/services/World_Topo_Map/MapServer");
+            map.addLayer(basemap);
+
+            var template = new esri.dijit.PopupTemplate({
+                title: "Geologic Outcrop",
+                description: "{lithology_type} with the following metamorphic facies: {metamorphic_facies}"
+            });
+            var featureLayer = new esri.layers.FeatureLayer("http://sampleserver5.arcgisonline.com/ArcGIS/rest/services/Energy/Geology/MapServer/9", {
+                mode: esri.layers.FeatureLayer.MODE_SNAPSHOT,
+                infoTemplate: template,
+                outFields: ["lithology_type", "metamorphic_facies"]
+            });
+
+            map.addLayer(featureLayer);
+
+
+        }
+        dojo.addOnLoad(init); 
+    </script> 
+  </head> 
+   
+  <body> 
+    <!-- use class="x-hide-display" to prevent a brief flicker of the content 
+    --> 
+    <div id="header"> 
+       <span>Header content goes here</span> 
+    </div> 
+    <div id="center" class="x-hide-display" style="z-index: 100;"> 
+    </div> 
+    <div id="props-panel" class="x-hide-display"> 
+    </div> 
+    <div id="footer" class="x-hide-display"> 
+      <span>Footer content goes here<span> 
+    </div> 
+    <div id="north" class="x-hide-display"> 
+ 
+    </div> 
+  </body> 
+ 
+</html> 
+
+

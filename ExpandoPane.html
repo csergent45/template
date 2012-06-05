@@ -1,0 +1,48 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html dir="ltr">
+    
+    <head>
+        <style type="text/css">
+            body, html { font-family:helvetica,arial,sans-serif; font-size:90%; }
+        </style>
+        <script src="http://ajax.googleapis.com/ajax/libs/dojo/1.6/dojo/dojo.xd.js"
+        djConfig="parseOnLoad: true">
+        </script>
+        <script type="text/javascript">
+            dojo.require("dijit.layout.ContentPane");
+            dojo.require("dijit.layout.BorderContainer");
+            dojo.require("dojox.layout.ExpandoPane");
+        </script>
+        <link rel="stylesheet" type="text/css" href="http://ajax.googleapis.com/ajax/libs/dojo/1.6/dijit/themes/claro/claro.css"
+        />
+        <style type="text/css">
+            @import url("http://ajax.googleapis.com/ajax/libs/dojo/1.6/dojox/layout/resources/ExpandoPane.css");
+            html, body { width: 100%; height: 100%; margin: 0; } #borderContainer {
+            width: 100%; height: 100%; }
+        </style>
+    </head>
+    
+    <body class=" claro ">
+        <div dojoType="dijit.layout.BorderContainer" design="sidebar" gutters="true"
+        liveSplitters="true" id="borderContainer">
+            <div dojoType="dojox.layout.ExpandoPane" title="Left Expando" maxWidth="225"
+            splitter="true" region="leading" style="width: 225px;">
+                Hi. I'm the Expando Pane
+            </div>
+            <div dojoType="dijit.layout.ContentPane" splitter="true" region="center">
+                Hi, I'm center
+            </div>
+        </div>
+        <!-- NOTE: the following script tag is not intended for usage in real
+        world!! it is part of the CodeGlass and you should just remove it when
+        you use the code -->
+        <script type="text/javascript">
+            dojo.addOnLoad(function() {
+                if (document.pub) {
+                    document.pub();
+                }
+            });
+        </script>
+    </body>
+
+</html>
