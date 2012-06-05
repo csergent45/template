@@ -1,13 +1,24 @@
 ﻿<%@ Page Language="VB" AutoEventWireup="false" CodeFile="unauthorized.aspx.vb" Inherits="unauthorized" %>
+<!DOCTYPE html>
+<html lang=en>
+    <head id="Head1" runat="server">
+        <meta charset=utf-8>
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+        <title>Not Authorized</title>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-    <title></title>
-</head>
+        <link rel="SHORTCUT ICON" href="assets/icons/globe.ico">
+        <!--The viewport meta tag is used to improve the presentation and behavior of the samples 
+            on iOS devices-->
+        <meta name="viewport" content="initial-scale=1, maximum-scale=1,user-scalable=no"/>
+
+        <!--[if lt IE 9]>
+            <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js">
+
+            </script>
+        <![endif]-->
+    </head>
 <body>
-    <form id="form1" runat="server">
+    <form id="frmNotAuthorized" runat="server">
     <div>
     
     </div>
