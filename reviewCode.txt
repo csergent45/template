@@ -1,0 +1,197 @@
+﻿Container that I am looking at:
+http://docs.sencha.com/ext-js/4-0/#/api/Ext.layout.container.Border
+
+code for containers:
+Ext.create('Ext.panel.Panel', {
+    width: 500,
+    height: 400,
+    title: 'Border Layout',
+    layout: 'border',
+    items: [{
+        title: 'South Region is resizable',
+        region: 'south',     // position for region
+        xtype: 'panel',
+        height: 100,
+        collapsible:true,
+        collapsed:true,
+        split: false,
+        margins: '0 5 5 5'
+    },{
+        // xtype: 'panel' implied by default
+        title: 'West Region is collapsible',
+        region:'west',
+        xtype: 'panel',
+        margins: '5 0 0 5',
+        width: 200,
+        split: true,
+        collapsed:true, 
+        collapsible: true,   // make collapsible
+        id: 'west-region-container',
+        layout: 'fit'
+    },{
+        title: 'Center Region',
+        region: 'center',     // center region is required, no width/height specified
+        xtype: 'panel',
+        layout: 'fit',
+        margins: '5 5 0 0'
+    }],
+    renderTo: Ext.getBody()
+});
+
+Panels:
+http://dev.sencha.com/deploy/ext-4.1.0-gpl/examples/panel/panel.html
+
+HTML for panels:
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+    <title>Ext.Panel</title>
+    <link rel="stylesheet" type="text/css" href="../../resources/css/ext-all.css" />
+    <link rel="stylesheet" type="text/css" href="../shared/example.css" />
+    <link rel="stylesheet" type="text/css" href="panel.css" />
+
+    <script type="text/javascript">var _gaq = _gaq || []; _gaq.push(['_setAccount', 'UA-1396058-8']); _gaq.push(['_trackPageview']); (function() { var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true; ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js'; var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s); })();</script>
+
+    <script type="text/javascript" src="../../ext-all.js"></script>
+    <script language="javascript" src="panel.js"></script>
+</head>
+<body>
+    <h1>Ext.Panel</h1>
+    <p>The js is not minified so it is readable. See <a href="panel.js">panel.js</a>.</p>
+</body>
+</html>
+
+JavaScript for panels:
+Ext.require([
+    '*'
+]);
+
+Ext.onReady(function() {
+    var html = '<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Sed metus nibh, sodales a, '+
+    'porta at, vulputate eget, dui. Pellentesque ut nisl. Maecenas tortor turpis, interdum non, sodales non, iaculis ac, '+
+    'lacus. Vestibulum auctor, tortor quis iaculis malesuada, libero lectus bibendum purus, sit amet tincidunt quam turpis '+
+    'vel lacus. In pellentesque nisl non sem. Suspendisse nunc sem, pretium eget, cursus a, fringilla vel, urna.<br/><br/>'+
+    'Aliquam commodo ullamcorper erat. Nullam vel justo in neque porttitor laoreet. Aenean lacus dui, consequat eu, adipiscing '+
+    'eget, nonummy non, nisi. Morbi nunc est, dignissim non, ornare sed, luctus eu, massa. Vivamus eget quam. Vivamus tincidunt '+
+    'diam nec urna. Curabitur velit. Lorem ipsum dolor sit amet.</p>';
+    
+    var configs = [{
+        title: 'Basic Panel',
+        collapsible:true,
+        width:400,
+        html: html
+    },{
+        width: 320,
+        height: 320,
+        title: 'Masked Panel with a really long title',
+        bodyStyle: "padding: 5px;",
+        html: 'Some content',
+        collapsible: true,
+        collapseDirection: Ext.Component.DIRECTION_LEFT,
+        listeners: {
+            render: function(p){
+                p.body.mask('Loading...');
+            },
+            delay: 50
+        }    
+    },{
+        width: 150,
+        height: 150,
+        unstyled: true,
+        title: 'Panel with unstyled:true',
+        bodyPadding: 0,
+        html: 'Some content'
+    },{
+        width: 150,
+        height: 150,
+        border: false,
+        frame: true,
+        title: 'Panel with border:false',
+        html: 'Some content'
+    },{
+        title: 'Framed panel: Width 280/Height 180',
+        html: html,
+        collapsible: true,
+        frame: true,
+        autoScroll: true,
+        width: 280,
+        height: 180
+    },{
+        title : 'Panel as child',
+        width : 500,
+        height: 400,
+        layout: 'fit',
+        bodyStyle: 'padding:5px',
+        items: [
+            {
+                xtype: 'panel',
+                border: false,
+                layout: {
+                    type: 'vbox',
+                    align: 'stretch'
+                },
+                items: [
+                    {
+                        html: 'top, with no title',
+                        height: 100,
+                        margin: '0 0 5 0'
+                    },{
+                        xtype: 'panel',
+                        title: 'test',
+                        html: 'bottom',
+                        flex: 1
+                    }
+                ]
+            }
+        ]
+    },{
+        title : 'Framed panel as child',
+        width : 300,
+        height: 100,
+        html  : null,
+        layout: 'fit',
+        items: [
+            {
+                xtype: 'panel',
+                title: 'Framed panel',
+                html : '123',
+                frame: true
+            }
+        ]
+    },{
+        title : 'Framed panel with normal child',
+        width : 300,
+        height: 100,
+        html  : null,
+        frame: true,
+        layout: 'fit',
+        items: [
+            {
+                xtype: 'panel',
+                title: 'Non-framed child',
+                html : 'Hello'
+            }
+        ]
+    },{
+        title: 'Width 180/No Height',
+        animCollapse: true,
+        collapsible: true,
+        width: 180,
+        html: html
+    }];
+    
+    Ext.each(configs, function(config) {
+        var element = Ext.getBody().createChild({cls: 'panel-container'});
+        
+        Ext.createWidget('panel', Ext.applyIf(config, {
+            renderTo: element,
+            bodyPadding: 7
+        }));
+    });
+});
+
+
+extJs Samples:
+http://www.sencha.com/products/extjs/examples/#sample-6
+

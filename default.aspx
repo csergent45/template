@@ -59,6 +59,11 @@
        
     </script>
 
+    <!-- Google Cdn's -->
+    <!-- https://developers.google.com/speed/libraries/devguide -->
+
+    <!-- YUI Compressor -->
+    <!-- http://developer.yahoo.com/yui/compressor/ -->
 
     <!-- Prototype 1.7 -->
     <!-- Library Source: http://prototypejs.org/ -->
