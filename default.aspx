@@ -11,6 +11,15 @@
             on iOS devices-->
         <meta name="viewport" content="initial-scale=1, maximum-scale=1,user-scalable=no"/>
 
+        <!-- Stylesheet Section Start -->
+        <!-- ext JS Stylesheets -->
+    
+        <!-- Ext relies on its default css so include it here. -->
+        <!-- This must come BEFORE javascript includes! -->
+        <style type="text/css">
+            @import "css/ext-all.css"
+        </style>
+
         <!-- Rico Stylesheets -->
         <link rel="Stylesheet" href="css/min.rico.css?v=1.0">
 
@@ -54,7 +63,7 @@
     
     </script>
 
-        <!-- Importing json.js for JSON functionality. -->
+    <!-- Importing json.js for JSON functionality. -->
     <script src="js/json.js">
        
     </script>
@@ -64,6 +73,28 @@
 
     <!-- YUI Compressor -->
     <!-- http://developer.yahoo.com/yui/compressor/ -->
+
+
+    <!-- Ext JS -->
+    <!-- Originally know as 
+         Library Source:http://www.extjs.com/ 
+         
+         New Source: http://www.sencha.com/
+      -->
+    <script src="js/ext-all-debug.js">
+    
+    </script>
+    
+    <script src="js/ext-all.js">
+    
+    </script>
+
+    <!-- jQuery -->
+    <!-- Library Source: http://jquery.com/ -->
+    <!-- jQuery Library -->
+    <script src="js/jquery-1.6.4.js">
+    
+    </script>
 
     <!-- Prototype 1.7 -->
     <!-- Library Source: http://prototypejs.org/ -->
