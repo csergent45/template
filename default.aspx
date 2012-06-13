@@ -16,9 +16,9 @@
     
         <!-- Ext relies on its default css so include it here. -->
         <!-- This must come BEFORE javascript includes! -->
-        <style type="text/css">
-            @import "css/ext-all.css"
-        </style>
+        <link rel="Stylesheet" href="css/ext-all.css?v=1.0">
+
+        <link rel="Stylesheet" href="css/panel.css?v=1.0">
 
         <!-- Rico Stylesheets -->
         <link rel="Stylesheet" href="css/min.rico.css?v=1.0">
@@ -86,6 +86,10 @@
     </script>
     
     <script src="js/ext-all.js">
+    
+    </script>
+
+    <script src="js/panel.js">
     
     </script>
 

@@ -1,0 +1,102 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html> 
+   
+  <head> 
+    <title> 
+      ExtJS Layout Example 
+    </title> 
+    <!--<link rel="stylesheet" type="text/css" href="http://serverapi.arcgisonline.com/jsapi/arcgis/2.5/js/dojo/dijit/themes/claro/claro.css"/> 
+    <link rel="stylesheet" type="text/css" href="http://extjs.cachefly.net/ext-3.2.1/resources/css/ext-all.css" />--> 
+    <link rel="stylesheet" type="text/css" href="http://cdn.sencha.io/ext-4.0.7-gpl/resources/css/ext-all.css"/> 
+    <link rel="stylesheet" type="text/css" href="http://serverapi.arcgisonline.com/jsapi/arcgis/2.8/js/esri/dijit/css/Popup.css"/> 
+    <style type="text/css"> 
+      html, body { 
+        font:normal 12px verdana;  
+        margin:0; 
+        padding:0;  
+        border:0 none; 
+        overflow:hidden;  
+        height:100%; 
+      }  
+ 
+    </style> 
+    <link href="App_Themes/gis/map.css" rel="stylesheet" type="text/css" />
+    <script src="http://serverapi.arcgisonline.com/jsapi/arcgis/?v=2.8compact" 
+    type="text/javascript"></script> 
+                 
+    <script type="text/javascript" charset="utf-8" src="http://cdn.sencha.io/ext-4.0.7-gpl/ext-all.js"></script>       
+    </script> 
+    <script type="text/javascript">
+        dojo.require("esri.map");
+        dojo.require("esri.layers.FeatureLayer");
+        dojo.require("esri.dijit.Popup");
+        dojo.require("dojo.number");
+
+
+        var map;
+
+        function init() {
+
+            var viewport = new Ext.Viewport({
+                layout: "fit",
+                title: "EXT JS Layout",
+                items: [{
+                    layout: "border",
+                    items: [{
+                        region: "center"
+                       
+                    }, {
+                        region: "south",
+                        height: 80,
+                        collapsible: true,
+                        collapsed: true,
+                        title:"Get Help",
+                        contentEl: "footer" // this gets the content from the div named "footer" 
+                    }, {
+                        region: "west",
+                        title: "Left Panel",
+                        width: 150,
+                        split: true,
+                        collapsible: true,
+                        html: "Left panel content. This panel is collapsible and can be resized using the splitter",
+                        listeners: {
+                            collapse: function () { if (map) { map.resize(); } }
+                        }
+                    }]
+                }]
+
+            });
+           
+
+
+        }
+        dojo.addOnLoad(init); 
+    </script> 
+  </head> 
+   
+  <body> 
+    <!-- use class="x-hide-display" to prevent a brief flicker of the content 
+    --> 
+    <div id="west" class="x-hide-display" style="z-index:200;" >
+    </div>
+
+    <div id="center" style="z-index: 100;"> 
+        <div id="myTest">
+            Test
+    </div>
+        
+    </div> 
+    <div id="props-panel" class="x-hide-display"> 
+    </div> 
+    <div id="footer" class="x-hide-display"> 
+      <span>Footer content goes here<span> 
+    </div> 
+    <div id="north" class="x-hide-display"> 
+ 
+    </div> 
+  </body> 
+ 
+</html> 
+
+
