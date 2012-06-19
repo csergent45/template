@@ -25,24 +25,18 @@
     <body class=" soria ">
         <div dojoType="dijit.layout.BorderContainer" design="sidebar" gutters="true"
         liveSplitters="true" id="borderContainer">
+           
             <div dojoType="dojox.layout.ExpandoPane" title="Left Expando" maxWidth="225"
             splitter="true" region="leading" style="width: 225px;">
                 Hi. I'm the Expando Pane
             </div>
+            
             <div dojoType="dijit.layout.ContentPane" splitter="true" region="center">
                 Hi, I'm center
             </div>
+            
         </div>
-        <!-- NOTE: the following script tag is not intended for usage in real
-        world!! it is part of the CodeGlass and you should just remove it when
-        you use the code -->
-        <script type="text/javascript">
-            dojo.addOnLoad(function() {
-                if (document.pub) {
-                    document.pub();
-                }
-            });
-        </script>
+        
     </body>
 
 </html>

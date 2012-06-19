@@ -23,6 +23,9 @@
         <!-- Rico Stylesheets -->
         <link rel="Stylesheet" href="css/min.rico.css?v=1.0">
 
+        <!-- Curvy Corners Stylesheets -->
+        <link rel="Stylesheet" href="css/curvy.css?v=1.0">
+
         <!-- Dojo Stylesheets -->
         <link rel="stylesheet" type="text/css" href="http://serverapi.arcgisonline.com/jsapi/arcgis/2.8/js/dojo/dojox/grid/resources/Grid.css">
         <link rel="stylesheet" type="text/css" href="http://serverapi.arcgisonline.com/jsapi/arcgis/2.8/js/dojo/dojox/grid/resources/soriaGrid.css">
@@ -89,10 +92,6 @@
     
     </script>
 
-    <script src="js/panel.js">
-    
-    </script>
-
     <!-- jQuery -->
     <!-- Library Source: http://jquery.com/ -->
     <!-- jQuery Library -->
@@ -135,6 +134,13 @@
     <!-- Load Rico Corner Rounding -->
     <script type="text/javascript">
         Rico.loadModule('Corner');
+    </script>
+
+    <!-- Curvy Corners 2.1 -->
+    <!-- Library Source: http://www.curvycorners.net/ -->
+    <!-- This makes rounded corners work with IE8 -->
+    <script src="js/curvycorners.js">
+        
     </script>
 
     <!-- Page Initialization -->

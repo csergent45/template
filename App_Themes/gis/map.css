@@ -1,4 +1,22 @@
-﻿#myTest
+﻿
+#west
+{
+    background-color:Red;
+    position:absolute;
+    z-index:200
+}
+
+#north
+{
+    background-color:Blue;
+}
+
+#props-panel
+{
+    background-color:Gray;
+}
+
+#myTest
 {
     position:absolute;
     left:50%;

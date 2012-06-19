@@ -1,3 +1,5 @@
 .panel-container {
     margin-bottom: 20px;
+    border-right-color:Red;
+    background-color:Blue;
 }
