@@ -16,7 +16,7 @@
     
         <!-- Ext relies on its default css so include it here. -->
         <!-- This must come BEFORE javascript includes! -->
-        <link rel="Stylesheet" href="css/ext-all.css?v=1.0">
+        <link rel="Stylesheet" href="http://cdn.sencha.io/ext-4.0.7-gpl/resources/css/ext-all.css?v=1.0">
 
         <link rel="Stylesheet" href="css/panel.css?v=1.0">
 
@@ -43,7 +43,29 @@
             
         </asp:ScriptManager>
         <!-- Script Manager Section End -->
-    
+        
+        <!-- use class="x-hide-display" to prevent flicker of the content -->
+        <!-- This will contain the map display and map controls -->
+        <!-- Center Begin -->
+        <div id="center" class="x-hide-display">
+            <span>My Map and Tools Section</span>
+        </div>
+        <!-- Center End -->
+
+        <!-- This will contain the Table of Contents -->
+        <!-- Props Panel Begin -->
+        <div id="props-panel" class="x-hide-display">
+            <span>My TOC Section</span>
+        </div>
+        <!-- Props Panel End -->
+
+        <!-- Footer Information Will Go Here -->
+        <!-- Footer Begin -->
+        <div id="footer" class="x-hide-display">
+            <span>My Footer Section</span>
+        </div>
+        <!-- Footer End -->
+        
     </form>
     
     <!-- Script Post Load Begin -->
@@ -84,14 +106,11 @@
          
          New Source: http://www.sencha.com/
       -->
-    <script src="js/ext-all-debug.js">
+    <script src="http://cdn.sencha.io/ext-4.0.7-gpl/ext-all.js">
     
     </script>
     
-    <script src="js/ext-all.js">
     
-    </script>
-
     <!-- jQuery -->
     <!-- Library Source: http://jquery.com/ -->
     <!-- jQuery Library -->
